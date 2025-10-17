@@ -1,0 +1,62 @@
+.cards-section {
+    .section-title {
+        display: flex;
+        justify-content: center;
+    }
+    h1{ 
+        color: #fff;
+        display: inline-block;
+        position: relative;
+        font-family: OpenSansLight;
+        font-size: calc((30/16) * 1rem);
+        font-weight: 300;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.1;
+        letter-spacing: 1.5px;
+        margin-bottom: 30px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    h1::after {
+        content: '';
+        display: block;
+        height: 1px;
+        background-color: #fff;
+        margin-top: 30px;
+    }
+    .cards-holder {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+        /* grid-auto-columns: 1fr;
+        grid-auto-rows: 1fr;
+        grid-template-areas:
+        "card-1 card-1 card-2"; */
+        gap: 10px;
+    }
+    .card-item-image {
+        cursor: pointer;
+        margin-bottom: 30px;
+    }
+    .card-item-title {
+        font-family: OpenSansBold;
+        font-size: calc((21/16) * 1rem);
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.43;
+        letter-spacing: normal;
+        text-align: center;
+    }
+    .card-item-desc {
+        font-family: OpenSansLight;
+        font-size: calc((21/16) * 1rem);
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.43;
+        padding: 0 30px;
+        letter-spacing: normal;
+        text-align: center;
+    }
+}
