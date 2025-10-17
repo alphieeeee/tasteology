@@ -67,6 +67,10 @@ svg {
   width: min(100vw, 1440px);
   margin: 0 auto;
 }
+.section {
+  padding-bottom: 120px;
+  padding-top: 120px;
+}
 
 .gutter {
   padding-left: calc(147/1440 * 100vw);
@@ -104,6 +108,13 @@ svg {
     background-color: #ffffff; */
     color: #fff;
     background: #0e1414;
+  }
+}
+
+@media (max-width: 1023px) {
+  .section {
+    padding-bottom: 60px;
+    padding-top: 60px;
   }
 }
 
