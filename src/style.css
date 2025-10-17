@@ -4,8 +4,10 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* color: rgba(255, 255, 255, 0.87);
+  background-color: #242424; */
+  color: #fff;
+  background: #0e1414;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,84 +15,101 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-a:hover {
-  color: #535bf2;
+
+html, body {
+  height: 100%;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  /* display: flex;
+  place-items: center; */
+  /* min-width: 320px; */
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
 #app {
-  max-width: 1280px;
+  /* margin: 0 auto; */
+  /* padding: 2rem; */
+  /* text-align: center; */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+main{
+  flex: 1;
+}
+
+img {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.section, .main-gutter {
+  width: min(100vw, 1440px);
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
+.gutter {
+  padding-left: calc(147/1440 * 100vw);
+  padding-right: calc(147/1440 * 100vw);
 }
 
-.card {
-  padding: 2em;
+.relative {
+  position: relative;
 }
 
-.read-the-docs {
-  color: #888;
+.absolute {
+  position: absolute;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+.fixed {
+  position: fixed;
 }
-button:hover {
-  border-color: #646cff;
+
+.inset-0 {
+  inset: 0;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+.mx-auto {
+  margin: 0 auto;
+}
+
+.blur-background {
+  filter: blur(10px);
+  transition: filter 0.3s ease;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    /* color: #213547;
+    background-color: #ffffff; */
+    color: #fff;
+    background: #0e1414;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+}
+
+@media (max-width: 767px) {
+  .gutter {
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }

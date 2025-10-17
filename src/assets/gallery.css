@@ -1,0 +1,100 @@
+.gallery-section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    .gallery-holder {
+        display: grid;
+        grid-auto-columns: 1fr;
+        grid-auto-rows: 1fr;
+        grid-template-areas:
+        "holder-1 holder-1 holder-2";
+        gap: 30px;
+    }
+
+    .gallery {
+        display: grid;
+        grid-auto-columns: 1fr;
+        grid-auto-rows: 1fr;
+        grid-template-areas:
+        "item-1 item-2"
+        "item-1 item-3";
+        gap: 10px;
+    }
+
+    .gallery-item {
+        cursor: pointer;
+    }
+
+    .content-title {
+        font-family: OpenSansLight;
+        font-size: calc(30/16 * 1rem);
+        font-weight: 300;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.1;
+        letter-spacing: 1.5px;
+        text-align: left;
+        color: #fff;
+        margin-bottom: 30px;
+    }
+
+    .divider {
+        height: calc(1/1440 * 100vw);
+        background-color: #fff;
+        margin-bottom: 30px;
+    }
+
+    p {
+        font-family: OpenSansLight;
+        font-size: calc(21/16 * 1rem);
+        font-weight: 300;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.43;
+        letter-spacing: normal;
+        text-align: left;
+        color: #fff;
+        margin-bottom: 30px;
+    }
+
+    .perfect-egg {
+        color: #cf1430;
+        font-family: OpenSansBold;
+        font-size: calc(15/16 * 1rem);
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.4;
+        letter-spacing: normal;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+    .content-footer {
+        font-family: OpenSansBold;
+        font-size: calc(20/16 * 1rem);
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.43;
+        letter-spacing: normal;
+        text-align: left;
+        color: #fff;
+    }
+
+    .gallery-item img {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    @media (max-width: 1023px) {
+        .gallery-holder {
+            grid-template-areas:
+            "holder-1 holder-1"
+            "holder-2 holder-2";
+        }
+        .gallery {
+            grid-template-areas:
+            "item-1 item-2"
+            "item-1 item-3";
+        }
+    }
+}
