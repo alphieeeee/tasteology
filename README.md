@@ -12,6 +12,17 @@ This project demonstrates a lightweight setup for creating fast, production-read
 
 ---
 
+## 😁 Other Details
+
+### EXAM DETAILS
+Preview Link: https://alphieeeee.github.io/tasteology/
+Repository: https://github.com/alphieeeee/tasteology.git
+
+### PORTFOLIO
+Portfolio: https://alphieeeee.github.io/zpla-interactive/
+
+---
+
 ## 🚀 Getting Started
 
 ### 1. Clone the repository
