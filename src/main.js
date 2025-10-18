@@ -51,8 +51,8 @@ document.querySelector('#app').innerHTML = `
         </div>
       </div>
     </section>
-    <div id="modalBackdrop" class="modal-backdrop fixed inset-0" aria-hidden="true">
-      <div class="modal-content main-gutter" role="dialog" tabindex="-1">
+    <div id="modalBackdrop" class="modal-backdrop fixed inset-0" hidden data-backdrop>
+      <div class="modal-content main-gutter" role="dialog" tabindex="-1" aria-modal="true">
         <div class="modal-header">
           <div class="modal-close-btn" aria-label="Close Modal">&times;</div>
         </div>
@@ -69,6 +69,7 @@ const modalBackdrop = document.getElementById('modalBackdrop');
 const modalImage = modalBackdrop.querySelector('.modal-image img');
 const modalCloseBtn = modalBackdrop.querySelector('.modal-close-btn');
 const modalContent = modalBackdrop.querySelector('.modal-content');
+const sectionEl = document.querySelectorAll('section');
 // CARDS SECTION
 const cardsHolder = document.querySelector('.cards-holder');
 
@@ -129,25 +130,36 @@ const cardsData = {
 // CREATE CARDS
 createCardBatch(cardsHolder, cardsData);
 
-// ADD EVENT LISTENERS
-galImages.forEach((img) => {
-  img.addEventListener('click', (e) => {
-    const dataObj = img.getAttribute('data-obj');
-    const { src, alt, orientation } = modalData[dataObj] || {
-      src: 'https://placehold.co/600x400',
-      alt: 'Placeholder Image',
-      orientation: 'landscape'
+// GALLERY MODAL FUNCTIONALITY
+galImages.forEach((el) => {
+  el.setAttribute('role', 'button');
+  el.tabIndex = 0;
+
+  const activate = () => {
+    const key = el.getAttribute('data-obj');
+    const data = modalData[key];
+
+    if (!data) return;
+    
+    setModalContent(modalImage, data);
+    openModal({ backdrop: modalBackdrop, content: modalContent, section: sectionEl });
+  };
+
+  el.addEventListener('click', activate);
+  el.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      activate();
     }
-    setModalContent(modalContent, modalImage, src, alt, orientation);
-    openModal(modalBackdrop, e.currentTarget);
   });
+});
+
+modalCloseBtn.addEventListener('click', () => {
+  closeModal({ backdrop: modalBackdrop, content: modalContent, section: sectionEl });
 });
 
 modalBackdrop.addEventListener('click', (e) => {
   if (e.target === modalBackdrop) {
-    closeModal(modalBackdrop);
+    closeModal({ backdrop: modalBackdrop, content: modalContent, section: sectionEl });
   }
-});
-modalCloseBtn.addEventListener('click', () => {
-  closeModal(modalBackdrop);
 });

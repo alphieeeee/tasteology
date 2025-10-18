@@ -1,12 +1,14 @@
 .modal-backdrop {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.7);
     display: grid;
     place-items: center;
     pointer-events: none;
     transition: all 0.3s ease;
+    opacity: 0;
+    pointer-events: none;
 }
 
-.modal-backdrop[aria-hidden="true"] {
+/* .modal-backdrop[aria-hidden="true"] {
     opacity: 0;
     pointer-events: none;
 }
@@ -18,7 +20,7 @@
 .modal-backdrop .open {
     opacity: 1;
     pointer-events: auto;
-}
+} */
 
 .modal-content {
     pointer-events: none;
@@ -39,13 +41,15 @@
 }
 
 .modal-header, .modal-image {
-    max-width: 1116px;
-    width: 45%;
+    max-width: 558px;
+    width: 100%;
+    /* width: calc((372 / 1440) * 100vw); */
 }
 
 .modal-close-btn {
     cursor: pointer;
     font-size: 2rem;
+    pointer-events: auto;
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -53,8 +57,9 @@
 }
 
 .portrait .modal-header, .portrait .modal-image {
-    max-width: 744px;
-    width: 40%;
+    max-width: 420px;
+    width: 100%;
+    /* width: calc((372 / 1440) * 100vw); */
 }
 
 .modal-image img {
@@ -65,50 +70,18 @@
   overflow: hidden;
 }
 
-@media (max-width: 1600px) {
-    .modal-header, .modal-image {
-        width: 57.5%;
-    }
-    .portrait .modal-header, .portrait .modal-image {
-        max-width: 744px;
-        width: 25%;
-    }
-}
+[hidden] { display: none !important; }
 
-@media (max-width: 1439px) {
-    .portrait .modal-header, .portrait .modal-image {
-        max-width: 744px;
-        width: 25%;
-    }
-}
-
-@media (max-width: 1279px) {
-    .portrait .modal-header, .portrait .modal-image {
-        max-width: 744px;
-        width: 30%;
-    }
-}
-
-@media (max-width: 1023px) {
-    .portrait .modal-header, .portrait .modal-image {
-        max-width: 744px;
-        width: 40%;
-    }
-}
-
-@media (max-width: 767px) {
-    .portrait .modal-header, .portrait .modal-image {
-        max-width: 744px;
-        width: 55%;
-    }
+.modal-backdrop:not([hidden]) {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 @media (max-width: 639px) {
     .modal-header, .modal-image {
-        width: 72.5%;
+        width: 90%;
     }
     .portrait .modal-header, .portrait .modal-image {
-        max-width: 744px;
-        width: 70%;
+        width: 90%;
     }
 }
