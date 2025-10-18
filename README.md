@@ -55,4 +55,5 @@ git commit -m "Your Message" // 👈 commit message here
 git subtree push --prefix dist origin gh-pages
 ```
 This will add the dist folder as a subtree in your repository
+
 https://[your-github-name].github.io/[repo-name]/ // 👈 gh page url
