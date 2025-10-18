@@ -36,8 +36,21 @@ Your site will be available at http://localhost:5173
 npm run build
 ```
 
-### 5. Build for production
+
+### Configure for GitHub Page
+```
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  base: '/repo-name/', // 👈 repository name here
+})
+```
+In your vite.config.js, add the base property like this:
+
+### Upload to Github Page 
 ```bash
 npm run build
+git add dist -f
+git commit -m "Your Message" // 👈 commit message here
 git subtree push --prefix dist origin gh-pages
 ```
