@@ -26,16 +26,10 @@ html, body {
 }
 
 body {
-  /* display: flex;
-  place-items: center; */
-  /* min-width: 320px; */
   min-height: 100vh;
 }
 
 #app {
-  /* margin: 0 auto; */
-  /* padding: 2rem; */
-  /* text-align: center; */
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -104,14 +98,12 @@ svg {
 
 @media (prefers-color-scheme: light) {
   :root {
-    /* color: #213547;
-    background-color: #ffffff; */
     color: #fff;
     background: #0e1414;
   }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 767px) {
   .section {
     padding-bottom: 60px;
     padding-top: 60px;
