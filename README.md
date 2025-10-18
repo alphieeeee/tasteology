@@ -47,10 +47,12 @@ export default defineConfig({
 ```
 In your vite.config.js, add the base property like this:
 
-### Upload to Github Page 
+### Follow commands to push to Github Page
 ```bash
 npm run build
 git add dist -f
 git commit -m "Your Message" // 👈 commit message here
 git subtree push --prefix dist origin gh-pages
 ```
+This will add the dist folder as a subtree in your repository
+https://[your-github-name].github.io/[repo-name]/ // 👈 gh page url
