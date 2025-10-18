@@ -32,7 +32,7 @@ export function openModal({ backdrop, content, section }) {
     keydownHandler = (e) => {
         if (e.key === 'Escape') {
             e.stopPropagation();
-            closeModal({ backdrop, content });
+            closeModal({ backdrop, content, section });
             return;
         }
         if (e.key === 'Tab') {
