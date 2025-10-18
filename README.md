@@ -15,11 +15,11 @@ This project demonstrates a lightweight setup for creating fast, production-read
 ## 😁 Other Details
 
 ### Exam details
-Preview Link: https://alphieeeee.github.io/tasteology/
-Repository: https://github.com/alphieeeee/tasteology.git
+- Preview Link: https://alphieeeee.github.io/tasteology/
+- Repository: https://github.com/alphieeeee/tasteology.git
 
 ### Portfolio
-Portfolio: https://alphieeeee.github.io/zpla-interactive/
+- Portfolio: https://alphieeeee.github.io/zpla-interactive/
 
 ---
 
